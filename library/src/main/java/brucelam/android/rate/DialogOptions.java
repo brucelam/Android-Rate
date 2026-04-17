@@ -1,7 +1,9 @@
-package hotchemi.android.rate;
+package brucelam.android.rate;
 
 import android.content.Context;
 import android.view.View;
+
+import brucelam.android.apprate.R;
 
 import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;

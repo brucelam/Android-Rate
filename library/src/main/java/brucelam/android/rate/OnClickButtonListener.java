@@ -1,4 +1,4 @@
-package hotchemi.android.rate;
+package brucelam.android.rate;
 
 public interface OnClickButtonListener {
 

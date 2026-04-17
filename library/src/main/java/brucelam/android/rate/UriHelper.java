@@ -1,4 +1,4 @@
-package hotchemi.android.rate;
+package brucelam.android.rate;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;

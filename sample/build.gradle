@@ -1,12 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
+    namespace "brucelam.android.rate.sample"
+    compileSdkVersion 36
     buildToolsVersion '23.0.2'
 
     defaultConfig {
-        minSdkVersion 9
-        targetSdkVersion 23
+        minSdkVersion 27
+        targetSdk 36
+        compileSdk 36
         versionCode 1
         versionName "1.0"
     }
@@ -23,5 +25,5 @@ repositories {
 }
 
 dependencies {
-    compile project(':library')
+    implementation project(':library')
 }

@@ -1,9 +1,11 @@
-package hotchemi.android.rate;
+package brucelam.android.rate;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Build;
+
+import brucelam.android.apprate.R;
 
 final class Utils {
 

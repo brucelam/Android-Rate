@@ -1,4 +1,4 @@
-package hotchemi.android.rate;
+package brucelam.android.rate;
 
 import android.app.Activity;
 import android.content.Context;
@@ -6,13 +6,13 @@ import android.view.View;
 
 import java.util.Date;
 
-import static hotchemi.android.rate.DialogManager.create;
-import static hotchemi.android.rate.PreferenceHelper.getInstallDate;
-import static hotchemi.android.rate.PreferenceHelper.getIsAgreeShowDialog;
-import static hotchemi.android.rate.PreferenceHelper.getLaunchTimes;
-import static hotchemi.android.rate.PreferenceHelper.getRemindInterval;
-import static hotchemi.android.rate.PreferenceHelper.isFirstLaunch;
-import static hotchemi.android.rate.PreferenceHelper.setInstallDate;
+import static brucelam.android.rate.DialogManager.create;
+import static brucelam.android.rate.PreferenceHelper.getInstallDate;
+import static brucelam.android.rate.PreferenceHelper.getIsAgreeShowDialog;
+import static brucelam.android.rate.PreferenceHelper.getLaunchTimes;
+import static brucelam.android.rate.PreferenceHelper.getRemindInterval;
+import static brucelam.android.rate.PreferenceHelper.isFirstLaunch;
+import static brucelam.android.rate.PreferenceHelper.setInstallDate;
 
 public final class AppRate {
 

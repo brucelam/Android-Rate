@@ -1,12 +1,13 @@
-package hotchemi.android.rate.sample;
+package brucelam.android.rate.sample;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 
-import hotchemi.android.rate.AppRate;
-import hotchemi.android.rate.OnClickButtonListener;
-import hotchemi.android.rate.StoreType;
+import brucelam.android.rate.AppRate;
+import brucelam.android.rate.OnClickButtonListener;
+import brucelam.android.rate.StoreType;
+
 
 public class MainActivity extends Activity {
 

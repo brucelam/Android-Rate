@@ -1,11 +1,11 @@
-package hotchemi.android.rate;
+package brucelam.android.rate;
 
 import android.content.Context;
 import android.content.Intent;
 
-import static hotchemi.android.rate.UriHelper.getGooglePlay;
-import static hotchemi.android.rate.UriHelper.getAmazonAppstore;
-import static hotchemi.android.rate.UriHelper.isPackageExists;
+import static brucelam.android.rate.UriHelper.getGooglePlay;
+import static brucelam.android.rate.UriHelper.getAmazonAppstore;
+import static brucelam.android.rate.UriHelper.isPackageExists;
 
 final class IntentHelper {
 

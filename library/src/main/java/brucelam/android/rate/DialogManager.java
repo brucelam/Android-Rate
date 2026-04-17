@@ -1,4 +1,4 @@
-package hotchemi.android.rate;
+package brucelam.android.rate;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -7,11 +7,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.View;
 
-import static hotchemi.android.rate.IntentHelper.createIntentForAmazonAppstore;
-import static hotchemi.android.rate.IntentHelper.createIntentForGooglePlay;
-import static hotchemi.android.rate.PreferenceHelper.setAgreeShowDialog;
-import static hotchemi.android.rate.PreferenceHelper.setRemindInterval;
-import static hotchemi.android.rate.Utils.getDialogBuilder;
+import static brucelam.android.rate.IntentHelper.createIntentForAmazonAppstore;
+import static brucelam.android.rate.IntentHelper.createIntentForGooglePlay;
+import static brucelam.android.rate.PreferenceHelper.setAgreeShowDialog;
+import static brucelam.android.rate.PreferenceHelper.setRemindInterval;
+import static brucelam.android.rate.Utils.getDialogBuilder;
 
 final class DialogManager {
 

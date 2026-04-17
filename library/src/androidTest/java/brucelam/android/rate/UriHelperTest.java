@@ -1,10 +1,10 @@
-package hotchemi.android.rate;
+package brucelam.android.rate;
 
 import android.net.Uri;
 import android.test.AndroidTestCase;
 
 /**
- * Unit test for {@link hotchemi.android.rate.UriHelper}
+ * Unit test for {@link brucelam.android.rate.UriHelper}
  */
 public class UriHelperTest extends AndroidTestCase {
 
@@ -20,7 +20,7 @@ public class UriHelperTest extends AndroidTestCase {
             assertNull(uri);
         }
         {
-            final String packageName = "hotchemi.android.rate";
+            final String packageName = "brucelam.android.rate";
             Uri uri = UriHelper.getGooglePlay(packageName);
             assertEquals(uri.toString(), GOOGLE_PLAY + packageName);
         }
