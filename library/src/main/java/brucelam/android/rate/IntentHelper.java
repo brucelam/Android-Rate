@@ -1,31 +1,51 @@
 package brucelam.android.rate;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 
-import static brucelam.android.rate.UriHelper.getGooglePlay;
-import static brucelam.android.rate.UriHelper.getAmazonAppstore;
-import static brucelam.android.rate.UriHelper.isPackageExists;
 
 final class IntentHelper {
 
-    private static final String GOOGLE_PLAY_PACKAGE_NAME = "com.android.vending";
+    private static final String GOOGLE_PLAY_PACKAGE = "com.android.vending";
 
-    private IntentHelper() {
-    }
+    private IntentHelper() {}
 
-    static Intent createIntentForGooglePlay(Context context) {
+    static void openStore(Context context, StoreType storeType) {
         String packageName = context.getPackageName();
-        Intent intent = new Intent(Intent.ACTION_VIEW, getGooglePlay(packageName));
-        if (isPackageExists(context, GOOGLE_PLAY_PACKAGE_NAME)) {
-            intent.setPackage(GOOGLE_PLAY_PACKAGE_NAME);
+
+        try {
+            if (storeType == StoreType.GOOGLEPLAY) {
+
+                // Try Google Play app first
+                Intent intent = new Intent(Intent.ACTION_VIEW,
+                        UriHelper.getGooglePlayApp(packageName));
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                context.startActivity(intent);
+
+            } else {
+                // Amazon
+                Intent intent = new Intent(Intent.ACTION_VIEW,
+                        UriHelper.getAmazonAppstore(packageName));
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                context.startActivity(intent);
+            }
+
+        } catch (ActivityNotFoundException e) {
+
+            // Fallback to web (VERY IMPORTANT)
+            try {
+                Intent intent = new Intent(Intent.ACTION_VIEW,
+                        UriHelper.getGooglePlayWeb(packageName));
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                context.startActivity(intent);
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
         }
-        return intent;
     }
-
-    static Intent createIntentForAmazonAppstore(Context context) {
-        String packageName = context.getPackageName();
-        return new Intent(Intent.ACTION_VIEW, getAmazonAppstore(packageName));
-    }
-
 }

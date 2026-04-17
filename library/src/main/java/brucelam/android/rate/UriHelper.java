@@ -9,27 +9,21 @@ import java.util.List;
 
 final class UriHelper {
 
-    private static final String GOOGLE_PLAY = "https://play.google.com/store/apps/details?id=";
-
+    private static final String GOOGLE_PLAY_APP = "market://details?id=";
+    private static final String GOOGLE_PLAY_WEB = "https://play.google.com/store/apps/details?id=";
     private static final String AMAZON_APPSTORE = "amzn://apps/android?p=";
 
-    private UriHelper() {
+    private UriHelper() {}
+
+    static Uri getGooglePlayApp(String packageName) {
+        return packageName == null ? null : Uri.parse(GOOGLE_PLAY_APP + packageName);
     }
 
-    static Uri getGooglePlay(String packageName) {
-        return packageName == null ? null : Uri.parse(GOOGLE_PLAY + packageName);
+    static Uri getGooglePlayWeb(String packageName) {
+        return packageName == null ? null : Uri.parse(GOOGLE_PLAY_WEB + packageName);
     }
 
     static Uri getAmazonAppstore(String packageName) {
         return packageName == null ? null : Uri.parse(AMAZON_APPSTORE + packageName);
-    }
-
-    static boolean isPackageExists(Context context, String targetPackage) {
-        PackageManager pm = context.getPackageManager();
-        List<ApplicationInfo> packages = pm.getInstalledApplications(0);
-        for (ApplicationInfo packageInfo : packages) {
-            if (packageInfo.packageName.equals(targetPackage)) return true;
-        }
-        return false;
     }
 }
